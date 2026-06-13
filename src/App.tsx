@@ -697,57 +697,150 @@ function App() {
   // Dashboard View
   if (!joined) {
     return (
-      <div style={{ minHeight: "100vh", backgroundColor: "#111827", color: "white" }}>
+      <div style={{ minHeight: "100vh", backgroundColor: "#0f1419", color: "white" }}>
         {/* Dashboard Header */}
-        <div style={{ borderBottom: "1px solid rgba(34, 197, 94, 0.1)", padding: "20px 30px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "1.3rem", fontWeight: 700 }}>
-            <svg width="32" height="32" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#22c55e"></stop>
-                  <stop offset="100%" stopColor="#16a34a"></stop>
-                </linearGradient>
-              </defs>
-              <rect width="512" height="512" rx="80" fill="#0b0f14"></rect>
-              <path d="M330 90 C280 70 220 90 205 140 C195 170 210 195 235 210 L210 250 C190 280 185 320 200 355 L185 400 L335 400 L320 355 C335 320 330 280 310 250 L285 215 C320 205 345 180 345 145 C345 125 340 105 330 90 Z" fill="url(#g)"></path>
-              <circle cx="255" cy="145" r="10" fill="#0b0f14"></circle>
-              <rect x="170" y="420" width="172" height="24" rx="12" fill="url(#g)"></rect>
-            </svg>
+        <div style={{ borderBottom: "1px solid rgba(34, 197, 94, 0.15)", padding: "16px 32px", display: "flex", justifyContent: "space-between", alignItems: "center", backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "1.4rem", fontWeight: 700 }}>
+            <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: "linear-gradient(135deg, #10b981 0%, #22c55e 100%)", display: "flex", alignItems: "center", justifyContent: "center", color: "#0b0f14", fontSize: "1.2rem" }}>♞</div>
             <span>ONECHESS</span>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <button onClick={handleLogout} style={{ padding: "8px 16px", borderRadius: "8px", backgroundColor: "rgba(34, 197, 94, 0.1)", border: "1px solid #22c55e", color: "#22c55e", cursor: "pointer", fontWeight: 600 }}>Logout</button>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <div style={{ width: "36px", height: "36px", borderRadius: "50%", backgroundColor: "#22c55e", display: "flex", alignItems: "center", justifyContent: "center", color: "#0b0f14", fontWeight: 700, fontSize: "1.1rem" }}>
-                {loginUsername.charAt(0).toUpperCase()}
-              </div>
-              <span style={{ fontWeight: 500 }}>{loginUsername}</span>
+          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M18 8h-1V7c0-.6-.4-1-1-1H8c-.6 0-1 .4-1 1v1H6c-.6 0-1 .4-1 1v10c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V9c0-.6-.4-1-1-1zm-3 6H9v-1h6v1z" fill="currentColor"></path>
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="currentColor"></path>
+            </svg>
+            <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "linear-gradient(135deg, #22c55e 0%, #10b981 100%)", display: "flex", alignItems: "center", justifyContent: "center", color: "#0b0f14", fontWeight: 700, fontSize: "1rem" }}>
+              {loginUsername.charAt(0).toUpperCase()}
             </div>
+            <span style={{ fontWeight: 600 }}>{loginUsername}</span>
           </div>
         </div>
 
         {/* Dashboard Content */}
-        <div style={{ padding: "40px 30px", maxWidth: "1300px", margin: "0 auto" }}>
+        <div style={{ padding: "32px 32px", maxWidth: "1400px", margin: "0 auto" }}>
           {/* Welcome Section */}
-          <div style={{ marginBottom: "40px" }}>
-            <h1 style={{ margin: "0 0 8px 0", fontSize: "2.8rem" }}>Welcome back,<br/><span style={{ color: "#22c55e" }}>{loginUsername}!</span></h1>
-            <p style={{ color: "#9ca3af", margin: "0", fontSize: "1rem" }}>What will you play today?</p>
+          <div style={{ marginBottom: "48px" }}>
+            <h1 style={{ margin: "0 0 12px 0", fontSize: "3.2rem", lineHeight: 1.1 }}>Welcome back,<br/><span style={{ color: "#22c55e" }}>{loginUsername}!</span></h1>
+            <p style={{ color: "#9ca3af", margin: "0", fontSize: "1.05rem" }}>What will you play today?</p>
           </div>
 
           {/* Main Grid Layout */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "30px", alignItems: "start" }}>
-            {/* Left Side - Action Cards */}
-            <div style={{ display: "grid", gap: "16px" }}>
-              {["Play Online", "Create Room", "Join Room", "Tournaments"].map((action, idx) => (
-                <div key={idx} style={{ padding: "20px", borderRadius: "14px", border: idx === 0 ? "2px solid #22c55e" : "1px solid rgba(255, 255, 255, 0.1)", backgroundColor: idx === 0 ? "rgba(34, 197, 94, 0.05)" : "rgba(0, 0, 0, 0.3)", cursor: "pointer", display: "flex", alignItems: "center", gap: "16px", transition: "all 0.3s ease" }}>
-                  <div style={{ fontSize: "1.8rem" }}>
-                    {idx === 0 && "👥"}
-                    {idx === 1 && "🏆"}
-                    {idx === 2 && "🎮"}
-                    {idx === 3 && "🏰"}
+          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "40px", alignItems: "start", marginBottom: "48px" }}>
+            {/* Left Side - Action Cards 2x2 Grid */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px" }}>
+              {[
+                { title: "Play Online", desc: "Play with players around the world", icon: "👥", highlight: true },
+                { title: "Create Room", desc: "Create a room and invite your friends", icon: "🏆", highlight: false },
+                { title: "Join Room", desc: "Join a room using room ID", icon: "🎮", highlight: false },
+                { title: "Tournaments", desc: "Compete in exciting tournaments", icon: "🏰", highlight: false },
+              ].map((action, idx) => (
+                <div key={idx} style={{
+                  padding: "22px",
+                  borderRadius: "12px",
+                  border: action.highlight ? "2px solid #22c55e" : "1px solid rgba(255, 255, 255, 0.08)",
+                  backgroundColor: action.highlight ? "rgba(34, 197, 94, 0.08)" : "rgba(0, 0, 0, 0.3)",
+                  cursor: "pointer",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "12px",
+                  transition: "all 0.3s ease",
+                }}>
+                  <div style={{ fontSize: "2.4rem" }}>{action.icon}</div>
+                  <div>
+                    <h3 style={{ margin: "0 0 4px 0", color: action.highlight ? "#22c55e" : "white", fontWeight: 600, fontSize: "1rem" }}>{action.title}</h3>
+                    <p style={{ margin: 0, color: "#9ca3af", fontSize: "0.85rem", lineHeight: 1.4 }}>{action.desc}</p>
                   </div>
-                  <div style={{ flex: 1 }}>
-                    <h3 style={{ margin: "0 0 4px 0", color: idx === 0 ? "#22c55e" : "white", fontWeight: 600 }}>{action}</h3>
+                  <div style={{ color: "#22c55e", fontSize: "1.2rem", marginTop: "4px" }}>›</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Side - Chess Image & Stats */}
+            <div style={{ display: "grid", gap: "20px" }}>
+              {/* Chess Piece Visualization */}
+              <div style={{
+                height: "280px",
+                backgroundColor: "rgba(34, 197, 94, 0.05)",
+                borderRadius: "12px",
+                border: "1px solid rgba(34, 197, 94, 0.15)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "5.5rem",
+                position: "relative",
+                overflow: "hidden",
+              }}>
+                <div style={{ textShadow: "0 0 30px rgba(34, 197, 94, 0.6)", animation: "glow 2s ease-in-out infinite" }}>♛</div>
+              </div>
+
+              {/* Stats Grid */}
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(5, 1fr)",
+                gap: "12px",
+                backgroundColor: "rgba(0, 0, 0, 0.3)",
+                padding: "20px",
+                borderRadius: "12px",
+                border: "1px solid rgba(255, 255, 255, 0.08)",
+              }}>
+                {[
+                  { emoji: "⭐", value: "1450", label: "Rating", color: "#22c55e" },
+                  { emoji: "🎮", value: "500", label: "Games", color: "#9ca3af" },
+                  { emoji: "📈", value: "280", label: "Wins", color: "#22c55e" },
+                  { emoji: "📉", value: "180", label: "Losses", color: "#ef4444" },
+                  { emoji: "🤝", value: "40", label: "Draws", color: "#fbbf24" },
+                ].map((stat, idx) => (
+                  <div key={idx} style={{ textAlign: "center", padding: "8px" }}>
+                    <div style={{ fontSize: "1.5rem", marginBottom: "6px" }}>{stat.emoji}</div>
+                    <div style={{ color: stat.color, fontSize: "1.3rem", fontWeight: 700, marginBottom: "2px" }}>{stat.value}</div>
+                    <div style={{ color: "#9ca3af", fontSize: "0.75rem", fontWeight: 500 }}>{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Recent Matches */}
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "18px" }}>
+              <h2 style={{ margin: 0, fontSize: "1.2rem", fontWeight: 700 }}>Recent Matches</h2>
+              <a href="#" style={{ color: "#22c55e", textDecoration: "none", fontSize: "0.9rem", fontWeight: 500 }}>View All</a>
+            </div>
+            <div style={{ backgroundColor: "rgba(0, 0, 0, 0.2)", borderRadius: "12px", border: "1px solid rgba(255, 255, 255, 0.08)", overflow: "hidden" }}>
+              {[
+                { id: 1, opponent: "Player123", result: "Win", color: "#22c55e" },
+                { id: 2, opponent: "Player456", result: "Loss", color: "#ef4444" },
+                { id: 3, opponent: "Player789", result: "Draw", color: "#9ca3af" },
+              ].map((match, idx) => (
+                <div key={idx} style={{
+                  display: "grid",
+                  gridTemplateColumns: "50px 1fr 80px 1fr 100px",
+                  gap: "18px",
+                  alignItems: "center",
+                  padding: "16px 22px",
+                  borderBottom: idx < 2 ? "1px solid rgba(255, 255, 255, 0.05)" : "none",
+                }}>
+                  <div style={{ color: "#9ca3af", fontWeight: 600, fontSize: "0.95rem" }}>{match.id}</div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <div style={{ width: "32px", height: "32px", borderRadius: "50%", backgroundColor: "#22c55e", display: "flex", alignItems: "center", justifyContent: "center", color: "#0b0f14", fontSize: "0.85rem", fontWeight: 700 }}>Y</div>
+                    <span style={{ fontSize: "0.95rem" }}>You</span>
+                  </div>
+                  <div style={{ textAlign: "center", color: "#9ca3af", fontSize: "0.9rem" }}>vs</div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <div style={{ width: "32px", height: "32px", borderRadius: "50%", backgroundColor: "#9ca3af", display: "flex", alignItems: "center", justifyContent: "center", color: "#0b0f14", fontSize: "0.85rem", fontWeight: 700 }}>P</div>
+                    <span style={{ fontSize: "0.95rem" }}>{match.opponent}</span>
+                  </div>
+                  <div style={{ textAlign: "right", color: match.color, fontWeight: 600, fontSize: "0.95rem" }}>{match.result}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
                     <p style={{ margin: 0, color: "#9ca3af", fontSize: "0.9rem" }}>
                       {idx === 0 && "Play with players around the world"}
                       {idx === 1 && "Create a room and invite your friends"}
@@ -760,18 +853,45 @@ function App() {
               ))}
             </div>
 
-            {/* Right Side - Stats & Image */}
+            {/* Right Side - Chess Image & Stats */}
             <div style={{ display: "grid", gap: "20px" }}>
-              {/* Chess Piece Image */}
-              <div style={{ height: "280px", backgroundColor: "rgba(34, 197, 94, 0.05)", borderRadius: "14px", border: "1px solid rgba(34, 197, 94, 0.1)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "6rem" }}>♛</div>
+              {/* Chess Piece Visualization */}
+              <div style={{
+                height: "280px",
+                backgroundColor: "rgba(34, 197, 94, 0.05)",
+                borderRadius: "12px",
+                border: "1px solid rgba(34, 197, 94, 0.15)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "5.5rem",
+                position: "relative",
+                overflow: "hidden",
+              }}>
+                <div style={{ textShadow: "0 0 30px rgba(34, 197, 94, 0.6)", animation: "glow 2s ease-in-out infinite" }}>♛</div>
+              </div>
 
               {/* Stats Grid */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "12px", backgroundColor: "rgba(0, 0, 0, 0.3)", padding: "18px", borderRadius: "14px", border: "1px solid rgba(255, 255, 255, 0.1)" }}>
-                {[{ emoji: "⭐", value: "1450", label: "Rating", color: "#22c55e" }, { emoji: "🎮", value: "500", label: "Games", color: "#9ca3af" }, { emoji: "📈", value: "280", label: "Wins", color: "#9ca3af" }, { emoji: "📉", value: "180", label: "Losses", color: "#ef4444" }, { emoji: "🤝", value: "40", label: "Draws", color: "#fbbf24" }].map((stat, idx) => (
-                  <div key={idx} style={{ textAlign: "center" }}>
-                    <div style={{ fontSize: "1.4rem", marginBottom: "4px" }}>{stat.emoji}</div>
-                    <div style={{ color: stat.color, fontSize: "1.2rem", fontWeight: 700 }}>{stat.value}</div>
-                    <div style={{ color: "#9ca3af", fontSize: "0.75rem" }}>{stat.label}</div>
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(5, 1fr)",
+                gap: "12px",
+                backgroundColor: "rgba(0, 0, 0, 0.3)",
+                padding: "20px",
+                borderRadius: "12px",
+                border: "1px solid rgba(255, 255, 255, 0.08)",
+              }}>
+                {[
+                  { emoji: "⭐", value: "1450", label: "Rating", color: "#22c55e" },
+                  { emoji: "🎮", value: "500", label: "Games", color: "#9ca3af" },
+                  { emoji: "📈", value: "280", label: "Wins", color: "#22c55e" },
+                  { emoji: "📉", value: "180", label: "Losses", color: "#ef4444" },
+                  { emoji: "🤝", value: "40", label: "Draws", color: "#fbbf24" },
+                ].map((stat, idx) => (
+                  <div key={idx} style={{ textAlign: "center", padding: "8px" }}>
+                    <div style={{ fontSize: "1.5rem", marginBottom: "6px" }}>{stat.emoji}</div>
+                    <div style={{ color: stat.color, fontSize: "1.3rem", fontWeight: 700, marginBottom: "2px" }}>{stat.value}</div>
+                    <div style={{ color: "#9ca3af", fontSize: "0.75rem", fontWeight: 500 }}>{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -779,22 +899,33 @@ function App() {
           </div>
 
           {/* Recent Matches */}
-          <div style={{ marginTop: "40px" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
-              <h2 style={{ margin: 0, fontSize: "1.2rem" }}>Recent Matches</h2>
-              <a href="#" style={{ color: "#22c55e", textDecoration: "none", fontSize: "0.9rem" }}>View All</a>
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "18px" }}>
+              <h2 style={{ margin: 0, fontSize: "1.2rem", fontWeight: 700 }}>Recent Matches</h2>
+              <a href="#" style={{ color: "#22c55e", textDecoration: "none", fontSize: "0.9rem", fontWeight: 500 }}>View All</a>
             </div>
-            <div style={{ backgroundColor: "rgba(0, 0, 0, 0.2)", borderRadius: "12px", border: "1px solid rgba(255, 255, 255, 0.1)", overflow: "hidden" }}>
-              {[{ id: 1, opponent: "Player123", result: "Win", color: "#22c55e" }, { id: 2, opponent: "Player456", result: "Loss", color: "#ef4444" }, { id: 3, opponent: "Player789", result: "Draw", color: "#9ca3af" }].map((match, idx) => (
-                <div key={idx} style={{ display: "grid", gridTemplateColumns: "40px 1fr 60px 1fr 80px", gap: "16px", alignItems: "center", padding: "14px 18px", borderBottom: idx < 2 ? "1px solid rgba(255, 255, 255, 0.05)" : "none" }}>
-                  <div style={{ color: "#9ca3af", fontWeight: 600 }}>{match.id}</div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                    <div style={{ width: "28px", height: "28px", borderRadius: "50%", backgroundColor: "#22c55e", display: "flex", alignItems: "center", justifyContent: "center", color: "#0b0f14", fontSize: "0.8rem", fontWeight: 700 }}>Y</div>
+            <div style={{ backgroundColor: "rgba(0, 0, 0, 0.2)", borderRadius: "12px", border: "1px solid rgba(255, 255, 255, 0.08)", overflow: "hidden" }}>
+              {[
+                { id: 1, opponent: "Player123", result: "Win", color: "#22c55e" },
+                { id: 2, opponent: "Player456", result: "Loss", color: "#ef4444" },
+                { id: 3, opponent: "Player789", result: "Draw", color: "#9ca3af" },
+              ].map((match, idx) => (
+                <div key={idx} style={{
+                  display: "grid",
+                  gridTemplateColumns: "50px 1fr 80px 1fr 100px",
+                  gap: "18px",
+                  alignItems: "center",
+                  padding: "16px 22px",
+                  borderBottom: idx < 2 ? "1px solid rgba(255, 255, 255, 0.05)" : "none",
+                }}>
+                  <div style={{ color: "#9ca3af", fontWeight: 600, fontSize: "0.95rem" }}>{match.id}</div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <div style={{ width: "32px", height: "32px", borderRadius: "50%", backgroundColor: "#22c55e", display: "flex", alignItems: "center", justifyContent: "center", color: "#0b0f14", fontSize: "0.85rem", fontWeight: 700 }}>Y</div>
                     <span style={{ fontSize: "0.95rem" }}>You</span>
                   </div>
-                  <div style={{ textAlign: "center", color: "#9ca3af", fontSize: "0.95rem" }}>vs</div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                    <div style={{ width: "28px", height: "28px", borderRadius: "50%", backgroundColor: "#9ca3af", display: "flex", alignItems: "center", justifyContent: "center", color: "#0b0f14", fontSize: "0.8rem", fontWeight: 700 }}>P</div>
+                  <div style={{ textAlign: "center", color: "#9ca3af", fontSize: "0.9rem" }}>vs</div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <div style={{ width: "32px", height: "32px", borderRadius: "50%", backgroundColor: "#9ca3af", display: "flex", alignItems: "center", justifyContent: "center", color: "#0b0f14", fontSize: "0.85rem", fontWeight: 700 }}>P</div>
                     <span style={{ fontSize: "0.95rem" }}>{match.opponent}</span>
                   </div>
                   <div style={{ textAlign: "right", color: match.color, fontWeight: 600, fontSize: "0.95rem" }}>{match.result}</div>
