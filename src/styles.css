@@ -125,7 +125,7 @@ button:hover:not(:disabled) {
   padding: 28px 42px 36px 42px;
   border-radius: 28px;
   overflow: hidden;
-  background-image: url('/bg-left.jpg');
+  background-image: url('/bg.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -148,31 +148,6 @@ button:hover:not(:disabled) {
 .auth-left {
   background-color: rgba(0,0,0,0.15);
   background-blend-mode: overlay;
-}
-
-/* Centered hero title overlay */
-.auth-hero-copy {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 28px;
-  z-index: 2;
-}
-
-.auth-hero-copy .hero-title {
-  margin: 0;
-  font-size: clamp(2.2rem, 6vw, 4.6rem);
-  line-height: 0.95;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.auth-hero-copy p {
-  display: none;
 }
 
 .auth-logo {
