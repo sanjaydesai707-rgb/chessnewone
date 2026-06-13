@@ -135,7 +135,7 @@ button:hover:not(:disabled) {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(7, 11, 20, 0.04);
+  background: linear-gradient(135deg, rgba(7, 11, 20, 0.08) 0%, rgba(7, 11, 20, 0.04) 50%, rgba(7, 11, 20, 0.02) 100%);
   pointer-events: none;
 }
 
@@ -559,14 +559,6 @@ button:hover:not(:disabled) {
   pointer-events: none;
 }
 
-.auth-left::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, rgba(7, 11, 20, 0.88) 0%, rgba(7, 11, 20, 0.44) 55%, rgba(7, 11, 20, 0.16) 100%);
-  pointer-events: none;
-}
-
 @media (max-width: 1050px) {
   .auth-page-inner {
     grid-template-columns: 1fr;
@@ -593,6 +585,14 @@ button:hover:not(:disabled) {
   .auth-right {
     gap: 22px;
   }
+}
+
+.auth-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(7, 11, 20, 0.28) 0%, rgba(7, 11, 20, 0.18) 55%, rgba(7, 11, 20, 0.08) 100%);
+  pointer-events: none;
 }
 
 .grid-2 {
