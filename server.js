@@ -559,7 +559,9 @@ httpServer.on("request", (req, res) => {
     return;
   }
 
-  const filePath = path.join(__dirname, "dist", req.url === "/" ? "index.html" : req.url);
+  const requestUrl = req.url ? req.url.split("?")[0] : "/";
+  const safePath = requestUrl === "/" ? "index.html" : requestUrl.replace(/^\/+/, "");
+  const filePath = path.join(__dirname, "dist", safePath);
   const ext = path.extname(filePath);
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
     const contentType = {
