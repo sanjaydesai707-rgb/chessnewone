@@ -536,6 +536,7 @@ function App() {
           </section>
 
           <section className="auth-right">
+            <div className="auth-right-card">
             <div className="auth-tabs">
               <button className={`auth-tab ${authMode === "login" ? "active" : ""}`} onClick={() => setAuthMode("login")}>
                 Login
@@ -547,8 +548,10 @@ function App() {
 
             <div className="auth-welcome">
               <div className="welcome-icon">♞</div>
-              <h2>Welcome Back!</h2>
-              <p>Login to continue your chess journey</p>
+              <div>
+                <h2>{authMode === "login" ? "Welcome Back!" : "Create your account"}</h2>
+                <p>{authMode === "login" ? "Login to continue your chess journey" : "Start playing and competing instantly"}</p>
+              </div>
             </div>
 
             <div className="auth-social-group">
@@ -560,11 +563,11 @@ function App() {
               </button>
             </div>
 
-            <div className="auth-divider">or</div>
+            <div className="auth-divider">or continue with email</div>
 
-            <div className="auth-field">
-              <label>
-                Email address
+            <div className="auth-form">
+              <label className="auth-field">
+                <span>Email address</span>
                 <input
                   type="email"
                   value={authMode === "login" ? loginUsername : registerUsername}
@@ -573,11 +576,11 @@ function App() {
                       ? setLoginUsername(event.target.value)
                       : setRegisterUsername(event.target.value)
                   }
-                  placeholder="Email address"
+                  placeholder="name@example.com"
                 />
               </label>
-              <label>
-                Password
+              <label className="auth-field">
+                <span>Password</span>
                 <input
                   type="password"
                   value={authMode === "login" ? loginPassword : registerPassword}
@@ -586,7 +589,7 @@ function App() {
                       ? setLoginPassword(event.target.value)
                       : setRegisterPassword(event.target.value)
                   }
-                  placeholder="Password"
+                  placeholder="Enter your password"
                 />
               </label>
               <div className="auth-forgot">Forgot password?</div>
@@ -624,6 +627,7 @@ function App() {
             </div>
 
             <div className="auth-status">{statusMessage}</div>
+          </div>
           </section>
         </div>
       </div>
