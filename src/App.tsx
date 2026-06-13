@@ -483,11 +483,10 @@ function App() {
             </div>
 
             <div className="auth-hero-copy">
-              <h1>
-                Play. <span className="auth-highlight">Learn.</span><br />
-                Win.
+              <h1 className="hero-title">
+                PLAY <span className="auth-highlight">LEARN</span> WIN<br />
+                WHOLE BLOG
               </h1>
-              <p>Join thousands of players around the world and enjoy the game of kings.</p>
             </div>
 
             <div className="auth-feature-list">
