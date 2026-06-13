@@ -139,6 +139,17 @@ button:hover:not(:disabled) {
   pointer-events: none;
 }
 
+.auth-left .auth-hero-copy h1,
+.auth-left .auth-hero-copy p {
+  color: #ffffff;
+  text-shadow: 0 6px 24px rgba(0,0,0,0.6);
+}
+
+.auth-left {
+  background-color: rgba(0,0,0,0.15);
+  background-blend-mode: overlay;
+}
+
 .auth-logo {
   display: flex;
   align-items: center;
