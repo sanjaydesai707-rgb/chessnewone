@@ -1,0 +1,12 @@
+app = "chess-tournament"
+
+[build]
+  image = "dockerfile"
+
+[env]
+  PORT = "4000"
+
+[[services]]
+  internal_port = 4000
+  protocol = "tcp"
+  ports = [{ port = 4000 }]
