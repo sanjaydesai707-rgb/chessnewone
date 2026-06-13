@@ -125,7 +125,7 @@ button:hover:not(:disabled) {
   padding: 28px 42px 36px 42px;
   border-radius: 28px;
   overflow: hidden;
-  background-image: linear-gradient(180deg, rgba(7, 11, 20, 0.25), rgba(7, 11, 20, 0.05)), url('/bg.jpg');
+  background-image: url('/bg.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -135,7 +135,7 @@ button:hover:not(:disabled) {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(7, 11, 20, 0.28) 0%, rgba(7, 11, 20, 0.14) 55%, rgba(7, 11, 20, 0.05) 100%);
+  background: linear-gradient(180deg, rgba(7, 11, 20, 0.08), rgba(7, 11, 20, 0.14));
   pointer-events: none;
 }
 
