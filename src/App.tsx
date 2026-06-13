@@ -479,7 +479,7 @@ function App() {
           <section className="auth-left">
             <div className="auth-logo">
               <span className="logo-mark">♞</span>
-              <span>ChessMaster</span>
+              <span>ONECHESS</span>
             </div>
 
             <div className="auth-hero-copy">
