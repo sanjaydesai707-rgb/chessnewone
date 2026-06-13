@@ -492,21 +492,37 @@ function App() {
 
             <div className="auth-feature-list">
               <div className="feature-item">
-                <div className="feature-icon">♟</div>
+                <div className="feature-icon">
+                  <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <path d="M12 11a3 3 0 100-6 3 3 0 000 6z" fill="currentColor"/>
+                    <path d="M4 20a8 8 0 0116 0v1H4v-1z" fill="currentColor"/>
+                  </svg>
+                </div>
                 <div>
                   <strong>Play Online</strong>
                   <span>Challenge players worldwide</span>
                 </div>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">♜</div>
+                <div className="feature-icon">
+                  <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <rect x="3" y="10" width="4" height="11" fill="currentColor" rx="1"/>
+                    <rect x="10" y="6" width="4" height="15" fill="currentColor" rx="1"/>
+                    <rect x="17" y="3" width="4" height="18" fill="currentColor" rx="1"/>
+                  </svg>
+                </div>
                 <div>
                   <strong>Improve Rating</strong>
                   <span>Climb the leaderboard</span>
                 </div>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">♚</div>
+                <div className="feature-icon">
+                  <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z" fill="currentColor"/>
+                    <path d="M11 14v5h2v-5h-2z" fill="currentColor"/>
+                  </svg>
+                </div>
                 <div>
                   <strong>Learn & Analyze</strong>
                   <span>Study games and puzzles</span>
@@ -516,14 +532,33 @@ function App() {
 
             <div className="auth-stats">
               <div className="stat-card">
+                <div className="stat-icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <path d="M12 12a3 3 0 100-6 3 3 0 000 6z" fill="currentColor"/>
+                    <path d="M4 20a8 8 0 0116 0v1H4v-1z" fill="currentColor"/>
+                  </svg>
+                </div>
                 <strong>50K+</strong>
                 <span>Players</span>
               </div>
               <div className="stat-card">
+                <div className="stat-icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <rect x="4" y="8" width="4" height="10" rx="1" fill="currentColor"/>
+                    <rect x="10" y="6" width="4" height="12" rx="1" fill="currentColor"/>
+                    <rect x="16" y="4" width="4" height="14" rx="1" fill="currentColor"/>
+                  </svg>
+                </div>
                 <strong>10K+</strong>
                 <span>Games Today</span>
               </div>
               <div className="stat-card">
+                <div className="stat-icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <path d="M5 4h14v3a4 4 0 01-4 4H9a4 4 0 01-4-4V4z" fill="currentColor"/>
+                    <path d="M7 14h10v2a3 3 0 01-3 3H10a3 3 0 01-3-3v-2z" fill="currentColor"/>
+                  </svg>
+                </div>
                 <strong>2K+</strong>
                 <span>Tournaments</span>
               </div>
@@ -556,10 +591,24 @@ function App() {
 
             <div className="auth-social-group">
               <button className="auth-social-button google" type="button">
-                <span>G</span> Continue with Google
+                <span className="social-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <rect x="2" y="2" width="8" height="8" rx="2" fill="#4285F4"/>
+                    <rect x="14" y="2" width="8" height="8" rx="2" fill="#DB4437"/>
+                    <rect x="2" y="14" width="8" height="8" rx="2" fill="#0F9D58"/>
+                    <rect x="14" y="14" width="8" height="8" rx="2" fill="#F4B400"/>
+                  </svg>
+                </span>
+                Continue with Google
               </button>
-              <button className="auth-social-button github" type="button">
-                <span>GH</span> Continue with GitHub
+              <button className="auth-social-button facebook" type="button">
+                <span className="social-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <rect x="0" y="0" width="24" height="24" rx="4" fill="#1877F2"/>
+                    <path d="M15.5 8.5h-1.2c-.3 0-.8.2-.8.9v1.1h2l-.3 2.1h-1.7V20h-2.1v-7.4H9.8v-2.1h1.7V9.6c0-1.7 1-2.8 2.6-2.8.8 0 1.6.1 1.8.1v2.6z" fill="#fff"/>
+                  </svg>
+                </span>
+                Continue with Facebook
               </button>
             </div>
 

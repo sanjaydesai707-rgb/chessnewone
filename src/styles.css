@@ -127,7 +127,7 @@ button:hover:not(:disabled) {
   overflow: hidden;
   background-image: url('/bg-left.jpg');
   background-size: cover;
-  background-position: right center;
+  background-position: 70% center;
   background-repeat: no-repeat;
 }
 
@@ -202,15 +202,50 @@ button:hover:not(:disabled) {
 }
 
 .feature-icon {
-  width: 44px;
-  min-width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.06);
+  width: 72px;
+  min-width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.38));
   display: grid;
   place-items: center;
   color: #22c55e;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), inset 0 -6px 18px rgba(0,0,0,0.35);
+  border: 1px solid rgba(34,197,94,0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-icon::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  top: -30%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle at 30% 20%, rgba(34,197,94,0.06), transparent 18%);
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.feature-item .feature-icon svg {
+  width: 36px;
+  height: 36px;
+  color: #22c55e;
+}
+
+.feature-icon:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(16,185,129,0.12), inset 0 -6px 18px rgba(0,0,0,0.36);
+  animation: icon-pulse 2.6s infinite;
+}
+
+@keyframes icon-pulse {
+  0% { box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 0 rgba(34,197,94,0); }
+  50% { box-shadow: 0 18px 40px rgba(16,185,129,0.10), 0 0 40px rgba(34,197,94,0.06); }
+  100% { box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 0 rgba(34,197,94,0); }
 }
 
 .feature-item strong {
@@ -237,6 +272,23 @@ button:hover:not(:disabled) {
   padding: 20px;
   text-align: center;
 }
+
+.stat-card .stat-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.38));
+  color: #22c55e;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6), inset 0 -6px 18px rgba(0,0,0,0.35);
+  border: 1px solid rgba(34,197,94,0.06);
+}
+
+.stat-card .stat-icon svg { width: 32px; height: 32px; color: #22c55e; }
+
+.stat-card:hover .stat-icon { transform: translateY(-6px) scale(1.02); }
 
 .stat-card strong {
   display: block;
@@ -416,26 +468,40 @@ button:hover:not(:disabled) {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
 }
 
-.auth-social-button span {
-  width: 34px;
-  height: 34px;
+.auth-social-button .social-icon {
+  width: 28px;
+  height: 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.15);
-  color: #071010;
-  font-weight: 700;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.auth-social-button .social-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .auth-social-button.google {
   background: #ffffff;
   color: #111827;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.auth-social-button.github {
-  background: rgba(255, 255, 255, 0.1);
-  color: #f8fafc;
+.auth-social-button.google:hover {
+  background: #f8f9fa;
+}
+
+.auth-social-button.facebook {
+  background: #1877F2;
+  color: #ffffff;
+  border: 1px solid #1877F2;
+}
+
+.auth-social-button.facebook:hover {
+  background: #0a66c2;
+  border-color: #0a66c2;
 }
 
 .auth-divider {
