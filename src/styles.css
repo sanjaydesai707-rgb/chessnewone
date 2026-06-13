@@ -125,9 +125,9 @@ button:hover:not(:disabled) {
   padding: 28px 42px 36px 42px;
   border-radius: 28px;
   overflow: hidden;
-  background-image: url('/bg.jpg');
+  background-image: url('/bg-left.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: right center;
   background-repeat: no-repeat;
 }
 
